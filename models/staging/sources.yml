@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: stackoverflow
+    tables:
+      - name: comments
+        config: {}
+        external_location: s3://us-prd-motherduck-open-datasets/stackoverflow/parquet/2023-05/comments.parquet

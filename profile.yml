@@ -1,0 +1,8 @@
+iag:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "C:/Users/s.mandha.ramaiah/iag/dbt.duckdb"
+      schema: main        # base schema (dbt_project.yml will override)
+      threads: 4
