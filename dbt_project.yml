@@ -26,6 +26,14 @@ clean-targets:
 models:
   iag:
     staging:
+      +materialized: table
       +schema: staging
-    marts:
-      +schema: marts
+    dim:
+      +materialized: table
+      +schema: dim
+    fact:
+      +materialized: table
+      +schema: fact
+    product:
+      +materialized: view
+      +schema: product

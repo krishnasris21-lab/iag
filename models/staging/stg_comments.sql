@@ -1,4 +1,10 @@
 {{ config(materialized='table') }}
 
-SELECT *
-FROM read_parquet('s3://us-prd-motherduck-open-datasets/stackoverflow/parquet/2023-05/comments.parquet')
+select
+    id AS comment_id,
+    postid AS post_id,
+    userid AS user_id,
+    text,
+    creationdate     AS comment_created_at,
+    score
+from {{ source('iag', 'comments') }}

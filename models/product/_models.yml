@@ -1,0 +1,60 @@
+version: 2
+
+models:
+  - name: dim_users
+    description: "User dimension"
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+          - unique
+      - name: display_name
+        description: "User's display name at time of snapshot"
+
+  - name: dim_date
+    description: "Calendar date dimension"
+    columns:
+      - name: date_day
+        tests:
+          - not_null
+          - unique
+
+  - name: fact_questions
+    description: "Fact table at the grain of one row per question"
+    columns:
+      - name: question_id
+        tests:
+          - not_null
+          - unique
+      - name: asker_user_id
+        tests:
+          - not_null
+
+  - name: fact_answers
+    description: "Fact table at the grain of one row per answer"
+    columns:
+      - name: answer_id
+        tests:
+          - not_null
+          - unique
+      - name: question_id
+        tests:
+          - not_null
+
+  - name: fact_comments
+    description: "Fact table at the grain of one row per comment"
+    columns:
+      - name: comment_id
+        tests:
+          - not_null
+          - unique
+
+  - name: users_by_views
+    description: "Top 10 users based on total views on questions they posted."
+
+  - name: time_to_accept_bands
+    description: "Monthly time series of questions by banded time from question to accepted answer."
+
+  - name: with_at_replies
+    description: "Count of questions where the asker uses @-replies to other users on the question or its answers."
+

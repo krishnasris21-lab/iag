@@ -1,8 +1,8 @@
 iag:
-  target: dev
+  target: staging
   outputs:
-    dev:
+    staging:
       type: duckdb
       path: "C:/Users/s.mandha.ramaiah/iag/dbt.duckdb"
-      schema: main        # base schema (dbt_project.yml will override)
+      schema: main
       threads: 4

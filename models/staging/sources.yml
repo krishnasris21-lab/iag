@@ -1,8 +1,40 @@
 version: 2
 
 sources:
-  - name: stackoverflow
+  - name: iag
     tables:
+      - name: posts
+        description: "Questions and answers"
+        config:
+          external_location: "s3://us-prd-motherduck-open-datasets/stackoverflow/parquet/2023-05/posts.parquet"
+          format: parquet
+
       - name: comments
-        config: {}
-        external_location: s3://us-prd-motherduck-open-datasets/stackoverflow/parquet/2023-05/comments.parquet
+        config:
+          external_location: "s3://us-prd-motherduck-open-datasets/stackoverflow/parquet/2023-05/comments.parquet"
+          format: parquet
+
+      - name: users
+        config:
+          external_location: "s3://us-prd-motherduck-open-datasets/stackoverflow/parquet/2023-05/users.parquet"
+          format: parquet
+
+      - name: votes
+        config:
+          external_location: "s3://us-prd-motherduck-open-datasets/stackoverflow/parquet/2023-05/votes.parquet"
+          format: parquet
+
+      - name: badges
+        config:
+          external_location: "s3://us-prd-motherduck-open-datasets/stackoverflow/parquet/2023-05/badges.parquet"
+          format: parquet
+
+      - name: tags
+        config:
+          external_location: "s3://us-prd-motherduck-open-datasets/stackoverflow/parquet/2023-05/tags.parquet"
+          format: parquet
+
+      - name: post_links
+        config:
+          external_location: "s3://us-prd-motherduck-open-datasets/stackoverflow/parquet/2023-05/post_links.parquet"
+          format: parquet
